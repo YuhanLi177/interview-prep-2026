@@ -1,0 +1,2363 @@
+[
+ {
+  "id": "q001",
+  "kp_id": "T1w1",
+  "type": "mcq",
+  "prompt_zh": "Two Sum 的 O(n) 解法核心是？",
+  "options": [
+   "HashMap 存 value→index，查 target − x",
+   "先排序再二分",
+   "双重循环",
+   "用 PriorityQueue"
+  ],
+  "answer": 0,
+  "explanation_zh": "扫一遍，每个元素先查补数 target − x 是否已在 HashMap 里，再把自己放进去；哈希表查找平均 O(1)，整体 O(n)。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0001-two-sum.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/hash-table/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q002",
+  "kp_id": "T1w1",
+  "type": "mcq",
+  "prompt_zh": "Two Sum 扫到元素 x 时，应在 HashMap 里查什么？",
+  "options": [
+   "target − x",
+   "target + x",
+   "x × 2"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode 解法：diff = target − n，查 diff 是否在 prevMap 里。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0001-two-sum.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/hash-table/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q003",
+  "kp_id": "T1w1",
+  "type": "mcq",
+  "prompt_zh": "Two Sum 用 HashMap 解法的空间复杂度？",
+  "options": [
+   "O(n)",
+   "O(1)",
+   "O(n²)"
+  ],
+  "answer": 0,
+  "explanation_zh": "最坏情况下 HashMap 要存下全部 n 个 value→index。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0001-two-sum.py",
+    "verified": true
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Hash_table",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q004",
+  "kp_id": "T1w1",
+  "type": "mcq",
+  "prompt_zh": "Contains Duplicate 的线性时间做法用什么？",
+  "options": [
+   "HashSet",
+   "Stack",
+   "LinkedList",
+   "二分查找"
+  ],
+  "answer": 0,
+  "explanation_zh": "遍历时检查元素是否已在集合里，在则返回 true，否则加入。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0217-contains-duplicate.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/hash-table/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q005",
+  "kp_id": "T1w1",
+  "type": "mcq",
+  "prompt_zh": "用 HashSet 做 Contains Duplicate 的时间复杂度？",
+  "options": [
+   "O(n)",
+   "O(n²)",
+   "O(log n)"
+  ],
+  "answer": 0,
+  "explanation_zh": "哈希表查找、插入平均 O(1)，做 n 次即 O(n)。",
+  "sources": [
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/hash-table/",
+    "verified": true
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Hash_table",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q006",
+  "kp_id": "T1w1",
+  "type": "mcq",
+  "prompt_zh": "Valid Anagram 的标准做法？",
+  "options": [
+   "比较两个字符串的字符计数",
+   "只比较长度",
+   "从两端双指针比较"
+  ],
+  "answer": 0,
+  "explanation_zh": "两串长度相同且每个字符出现次数相同即为 anagram；排序后比较也行，但是 O(n log n)。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0242-valid-anagram.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/string/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q007",
+  "kp_id": "T1w1",
+  "type": "mcq",
+  "prompt_zh": "Group Anagrams 的 HashMap key 通常取什么？",
+  "options": [
+   "排序后的字符串（或 26 位字符计数）",
+   "字符串长度",
+   "首字母",
+   "字符串的 hashCode"
+  ],
+  "answer": 0,
+  "explanation_zh": "互为 anagram 的字符串排序后相同、字符计数也相同；NeetCode 用计数 tuple 作 key。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0049-group-anagrams.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/string/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q008",
+  "kp_id": "T1w1",
+  "type": "mcq",
+  "prompt_zh": "Group Anagrams 在 NeetCode 里属于哪个 pattern？",
+  "options": [
+   "Arrays & Hashing",
+   "Sliding Window",
+   "Graphs"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode 仓库 README 中 0049 Group Anagrams 列在 Arrays & Hashing 下。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode",
+    "verified": true
+   },
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0049-group-anagrams.py",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q009",
+  "kp_id": "T1w1",
+  "type": "mcq",
+  "prompt_zh": "Top K Frequent Elements 的第一步通常是？",
+  "options": [
+   "用 HashMap 统计频次",
+   "先二分查找",
+   "建 Trie"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode 解法先 count，再按频次分桶从高往低取 K 个（也可用堆）。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0347-top-k-frequent-elements.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/hash-table/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q010",
+  "kp_id": "T1w1",
+  "type": "mcq",
+  "prompt_zh": "Kotlin 里哪个集合可同时当 stack 和 queue 用？",
+  "options": [
+   "ArrayDeque",
+   "HashMap",
+   "Set",
+   "Array"
+  ],
+  "answer": 0,
+  "explanation_zh": "Kotlin 官方集合文档：ArrayDeque 是双端队列，可同时充当 Stack 和 Queue。",
+  "sources": [
+   {
+    "url": "https://kotlinlang.org/docs/collections-overview.html",
+    "verified": true
+   },
+   {
+    "url": "https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-array-deque/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q011",
+  "kp_id": "T1w1",
+  "type": "mcq",
+  "prompt_zh": "在 Kotlin/JVM 上做 Top K，常用的堆是哪个类？",
+  "options": [
+   "java.util.PriorityQueue",
+   "kotlin.collections.ArrayDeque",
+   "HashMap"
+  ],
+  "answer": 0,
+  "explanation_zh": "Kotlin 标准库没有自带堆；JVM 上用 java.util.PriorityQueue，官方文档说它基于 priority heap。",
+  "sources": [
+   {
+    "url": "https://docs.oracle.com/javase/8/docs/api/java/util/PriorityQueue.html",
+    "verified": true
+   },
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0347-top-k-frequent-elements.py",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q012",
+  "kp_id": "T1w2",
+  "type": "mcq",
+  "prompt_zh": "Longest Substring Without Repeating Characters 属于哪个 pattern？",
+  "options": [
+   "Sliding Window + Set/Map",
+   "Binary Search",
+   "DP",
+   "Heap"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode 把 0003 归在 Sliding Window；Tech Interview Handbook 也把它列为 sliding window 例题。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/array/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q013",
+  "kp_id": "T1w2",
+  "type": "mcq",
+  "prompt_zh": "Longest Substring Without Repeating Characters 的时间复杂度？",
+  "options": [
+   "O(n)",
+   "O(n²)",
+   "O(n log n)"
+  ],
+  "answer": 0,
+  "explanation_zh": "左右指针都只向右走，各最多 n 步，所以是 O(n)。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0003-longest-substring-without-repeating-characters.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/array/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q014",
+  "kp_id": "T1w2",
+  "type": "mcq",
+  "prompt_zh": "滑动窗口里遇到重复字符，下一步做什么？",
+  "options": [
+   "左边界右移，直到窗口内无重复",
+   "清空整个窗口重新开始",
+   "右边界左移"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode 解法：while s[r] in set，就移除 s[l] 并 l += 1。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0003-longest-substring-without-repeating-characters.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/array/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q015",
+  "kp_id": "T1w2",
+  "type": "mcq",
+  "prompt_zh": "Valid Palindrome 在 NeetCode 里归在哪个 pattern？",
+  "options": [
+   "Two Pointers",
+   "Sliding Window",
+   "BFS",
+   "Trie"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode README 中 0125 Valid Palindrome 列在 Two Pointers 下；也可从两端相向比较。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/string/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q016",
+  "kp_id": "T1w2",
+  "type": "mcq",
+  "prompt_zh": "Valid Palindrome 比较时如何处理标点和大小写？",
+  "options": [
+   "跳过非字母数字，忽略大小写",
+   "全部计入",
+   "只看首尾字符"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode 解法只保留 isalpha/isdigit 字符并转小写后再比较。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0125-valid-palindrome.py",
+    "verified": true
+   },
+   {
+    "url": "https://leetcode.com/problems/valid-palindrome/",
+    "verified": false,
+    "note": "LeetCode 题面页需 JS，未能抓取"
+   }
+  ]
+ },
+ {
+  "id": "q017",
+  "kp_id": "T1w2",
+  "type": "mcq",
+  "prompt_zh": "3Sum 的常见做法是？",
+  "options": [
+   "排序后固定一个数，剩余用双指针",
+   "三重循环",
+   "Trie",
+   "Union-Find"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode 把 3Sum 归在 Two Pointers：先 sort，对每个 a 用 l/r 双指针。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0015-3sum.py",
+    "verified": true
+   },
+   {
+    "url": "https://github.com/neetcode-gh/leetcode",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q018",
+  "kp_id": "T1w2",
+  "type": "mcq",
+  "prompt_zh": "3Sum 进入双指针前的预处理是？",
+  "options": [
+   "排序",
+   "建 HashMap 存下标",
+   "建堆"
+  ],
+  "answer": 0,
+  "explanation_zh": "排序后才能根据和偏大/偏小移动左右指针，也便于跳过重复。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0015-3sum.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/array/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q019",
+  "kp_id": "T1w2",
+  "type": "mcq",
+  "prompt_zh": "3Sum（排序 + 双指针）的时间复杂度？",
+  "options": [
+   "O(n²)",
+   "O(n)",
+   "O(n³)"
+  ],
+  "answer": 0,
+  "explanation_zh": "外层固定一个数 O(n)，内层双指针 O(n)；排序 O(n log n) 被 O(n²) 覆盖。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0015-3sum.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/array/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q020",
+  "kp_id": "T1w2",
+  "type": "mcq",
+  "prompt_zh": "Best Time to Buy and Sell Stock 一遍扫描时要维护什么？",
+  "options": [
+   "到目前为止的最低价",
+   "最高价的下标列表",
+   "所有差值的排序"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode 解法维护 lowest，每天用 price − lowest 更新最大利润。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0121-best-time-to-buy-and-sell-stock.py",
+    "verified": true
+   },
+   {
+    "url": "https://github.com/neetcode-gh/leetcode",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q021",
+  "kp_id": "T1w2",
+  "type": "mcq",
+  "prompt_zh": "NeetCode 把 Best Time to Buy and Sell Stock 归为？",
+  "options": [
+   "Sliding Window",
+   "Binary Search",
+   "Graphs"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode README 中 0121 列在 Sliding Window 下。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode",
+    "verified": true
+   },
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0121-best-time-to-buy-and-sell-stock.py",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q022",
+  "kp_id": "T1w3",
+  "type": "mcq",
+  "prompt_zh": "Valid Parentheses 用什么数据结构？结束条件？",
+  "options": [
+   "Stack；最后栈必须为空",
+   "Queue；队列满",
+   "HashSet；集合为空",
+   "Heap；堆顶为 ("
+  ],
+  "answer": 0,
+  "explanation_zh": "左括号入栈，右括号与栈顶配对后出栈，最后 return not stack。Tech Interview Handbook 把它列为 stack 必练题。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0020-valid-parentheses.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/stack/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q023",
+  "kp_id": "T1w3",
+  "type": "mcq",
+  "prompt_zh": "Valid Parentheses 遇到右括号时做什么？",
+  "options": [
+   "检查栈顶是否为对应左括号，是则弹出",
+   "压入栈",
+   "什么都不做"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode 解法：栈空或栈顶不匹配就返回 false，否则 pop。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0020-valid-parentheses.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/stack/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q024",
+  "kp_id": "T1w3",
+  "type": "mcq",
+  "prompt_zh": "Valid Parentheses 遍历结束后返回 true 的条件？",
+  "options": [
+   "栈为空",
+   "栈里只剩一个元素",
+   "栈满"
+  ],
+  "answer": 0,
+  "explanation_zh": "剩下未配对的左括号说明无效。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0020-valid-parentheses.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/stack/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q025",
+  "kp_id": "T1w3",
+  "type": "mcq",
+  "prompt_zh": "输入 \"(]\" 时 Valid Parentheses 的结果？",
+  "options": [
+   "false",
+   "true",
+   "抛异常"
+  ],
+  "answer": 0,
+  "explanation_zh": "] 对应的是 [，与栈顶 ( 不配对，直接返回 false。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0020-valid-parentheses.py",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/stack/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q026",
+  "kp_id": "T1w3",
+  "type": "mcq",
+  "prompt_zh": "Kotlin 里写 Valid Parentheses，栈用哪个类？",
+  "options": [
+   "ArrayDeque<Char>",
+   "HashMap<Char, Int>",
+   "PriorityQueue<Char>"
+  ],
+  "answer": 0,
+  "explanation_zh": "Kotlin 官方文档：ArrayDeque 可充当 Stack；栈是 LIFO 结构。",
+  "sources": [
+   {
+    "url": "https://kotlinlang.org/docs/collections-overview.html",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/stack/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q027",
+  "kp_id": "T1w3",
+  "type": "mcq",
+  "prompt_zh": "二分查找的时间复杂度？",
+  "options": [
+   "O(log n)",
+   "O(n)",
+   "O(1)"
+  ],
+  "answer": 0,
+  "explanation_zh": "每次排除一半，最坏 O(log n) 次比较。",
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Binary_search",
+    "verified": true
+   },
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0033-search-in-rotated-sorted-array.py",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q028",
+  "kp_id": "T1w3",
+  "type": "mcq",
+  "prompt_zh": "Search in Rotated Sorted Array 属于哪个 pattern？",
+  "options": [
+   "Binary Search",
+   "Sliding Window",
+   "Graph",
+   "Greedy"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode README 中 0033 列在 Binary Search 下。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode",
+    "verified": true
+   },
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0033-search-in-rotated-sorted-array.py",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q029",
+  "kp_id": "T1w3",
+  "type": "mcq",
+  "prompt_zh": "旋转有序数组中，二分时可以利用的性质？",
+  "options": [
+   "mid 两侧至少有一半是有序的",
+   "整体仍然有序",
+   "中点一定是最小值"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode 解法先用 nums[l] <= nums[mid] 判断哪一半有序，再看 target 是否落在那一半。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0033-search-in-rotated-sorted-array.py",
+    "verified": true
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Binary_search",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q030",
+  "kp_id": "T1w3",
+  "type": "mcq",
+  "prompt_zh": "Find Minimum in Rotated Sorted Array：nums[mid] > nums[right] 说明？",
+  "options": [
+   "最小值在 mid 右侧",
+   "最小值在 mid 左侧（含 mid）",
+   "mid 就是最小值"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode 解法注释“right has the min”，令 start = mid + 1。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0153-find-minimum-in-rotated-sorted-array.py",
+    "verified": true
+   },
+   {
+    "url": "https://github.com/neetcode-gh/leetcode",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q031",
+  "kp_id": "T1w3",
+  "type": "mcq",
+  "prompt_zh": "NeetCode 把 Find Minimum in Rotated Sorted Array 归为？",
+  "options": [
+   "Binary Search",
+   "Stack",
+   "Two Pointers"
+  ],
+  "answer": 0,
+  "explanation_zh": "NeetCode README 中 0153 列在 Binary Search 下。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode",
+    "verified": true
+   },
+   {
+    "url": "https://github.com/neetcode-gh/leetcode/blob/main/python/0153-find-minimum-in-rotated-sorted-array.py",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q032",
+  "kp_id": "T2w1",
+  "type": "mcq",
+  "prompt_zh": "Android 平台架构从上到下哪个顺序对？",
+  "options": [
+   "app → framework → system services → ART → HAL → kernel",
+   "app → kernel → HAL → framework",
+   "framework → app → HAL → ART",
+   "app → HAL → framework → kernel"
+  ],
+  "answer": 0,
+  "explanation_zh": "AOSP architecture 页按 app、framework、system services、ART、HAL、kernel 分层；developer 的 platform 页同样以 Linux kernel 为底、HAL 在其上。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/architecture",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/guide/platform",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q033",
+  "kp_id": "T2w1",
+  "type": "mcq",
+  "prompt_zh": "AOSP 架构里 system services 的例子是？",
+  "options": [
+   "system_server、SurfaceFlinger",
+   "Room、Paging",
+   "Retrofit、OkHttp",
+   "Gradle、R8"
+  ],
+  "answer": 0,
+  "explanation_zh": "AOSP architecture：system services 是 system_server、SurfaceFlinger、MediaService 这类模块化组件。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/architecture",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/guide/platform",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q034",
+  "kp_id": "T2w1",
+  "type": "mcq",
+  "prompt_zh": "system_server 属于哪一层？",
+  "options": [
+   "system services",
+   "HAL",
+   "kernel"
+  ],
+  "answer": 0,
+  "explanation_zh": "AOSP architecture 把 system_server 列为 system service。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/architecture",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/guide/platform",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q035",
+  "kp_id": "T2w1",
+  "type": "mcq",
+  "prompt_zh": "SurfaceFlinger 在 AOSP 架构中属于？",
+  "options": [
+   "system services",
+   "app 层",
+   "kernel 驱动"
+  ],
+  "answer": 0,
+  "explanation_zh": "AOSP architecture 把 SurfaceFlinger 列为 system service。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/architecture",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/guide/platform",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q036",
+  "kp_id": "T2w1",
+  "type": "mcq",
+  "prompt_zh": "Android 软件栈最底层是？",
+  "options": [
+   "Linux kernel",
+   "HAL",
+   "ART"
+  ],
+  "answer": 0,
+  "explanation_zh": "Platform architecture：Android 平台的基础是 Linux kernel，ART 依赖它做线程和底层内存管理。",
+  "sources": [
+   {
+    "url": "https://developer.android.com/guide/platform",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/architecture",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q037",
+  "kp_id": "T2w1",
+  "type": "mcq",
+  "prompt_zh": "HAL 的作用是？",
+  "options": [
+   "提供标准接口，把硬件能力暴露给上层 framework",
+   "编译 Kotlin 代码",
+   "管理 Activity 栈"
+  ],
+  "answer": 0,
+  "explanation_zh": "Platform architecture：HAL 提供标准接口，把设备硬件能力暴露给 Java API framework；AOSP HAL 概览：HAL 让厂商实现底层设备相关功能而不影响上层。",
+  "sources": [
+   {
+    "url": "https://developer.android.com/guide/platform",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/architecture/hal",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q038",
+  "kp_id": "T2w1",
+  "type": "mcq",
+  "prompt_zh": "framework 代码运行在哪里？",
+  "options": [
+   "app 自己的进程里",
+   "只在 system_server 里",
+   "kernel 里"
+  ],
+  "answer": 0,
+  "explanation_zh": "AOSP architecture 原文：Android framework code runs inside an app's process；developer platform 页：每个 app 跑在自己的进程和 ART 实例里。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/architecture",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/guide/platform",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q039",
+  "kp_id": "T2w1",
+  "type": "mcq",
+  "prompt_zh": "Java API framework 通过什么访问底层硬件？",
+  "options": [
+   "和 system services 通信",
+   "直接读写驱动",
+   "通过 Gradle"
+  ],
+  "answer": 0,
+  "explanation_zh": "AOSP architecture：framework API 暴露的功能通过与 system services 通信来访问底层硬件。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/architecture",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/guide/platform",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q040",
+  "kp_id": "T2w1",
+  "type": "mcq",
+  "prompt_zh": "车载 Android 里，车辆信号（车速、空调等）通过哪一层接入？",
+  "options": [
+   "Vehicle HAL（VHAL）",
+   "WorkManager",
+   "Activity",
+   "FCM"
+  ],
+  "answer": 0,
+  "explanation_zh": "VHAL 文档：VHAL 接口以“属性”为抽象，读、写、订阅车辆的具体功能。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/automotive/vhal",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/automotive/vhal/vhal-interface",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q041",
+  "kp_id": "T2w1",
+  "type": "mcq",
+  "prompt_zh": "VHAL 接口的核心抽象是什么？",
+  "options": [
+   "property（属性）的读、写、订阅",
+   "Intent 广播",
+   "HTTP 请求"
+  ],
+  "answer": 0,
+  "explanation_zh": "VHAL 文档：The VHAL interface is based on accessing (reading, writing, and subscribing) a property；IVehicle 接口有 getValues / setValues。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/automotive/vhal",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/automotive/vhal/vhal-interface",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q042",
+  "kp_id": "T2w2",
+  "type": "mcq",
+  "prompt_zh": "新 app 进程是怎么创建的？",
+  "options": [
+   "从 Zygote fork 出来",
+   "init 直接 exec 一个新 JVM",
+   "Launcher fork",
+   "app 自己 fork"
+  ],
+  "answer": 0,
+  "explanation_zh": "Memory overview：每个 app 进程都由 Zygote fork 而来；About the Zygote 页描述 system server 通过 Unix domain socket 向 Zygote/USAP 请求进程。",
+  "sources": [
+   {
+    "url": "https://developer.android.com/topic/performance/memory-overview",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/runtime/zygote",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q043",
+  "kp_id": "T2w2",
+  "type": "mcq",
+  "prompt_zh": "system_server 和 Zygote（或 USAP pool）之间用什么通信？",
+  "options": [
+   "Unix domain socket",
+   "Binder",
+   "HTTP"
+  ],
+  "answer": 0,
+  "explanation_zh": "About the Zygote：The system server uses a Unix domain socket 连接 Zygote / USAP。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/runtime/zygote",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/topic/performance/memory-overview",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q044",
+  "kp_id": "T2w2",
+  "type": "mcq",
+  "prompt_zh": "为什么 Zygote 预加载框架代码能省内存？",
+  "options": [
+   "fork 出的进程之间共享这些内存页",
+   "压缩了 APK",
+   "关闭了 GC",
+   "跳过了 JIT"
+  ],
+  "answer": 0,
+  "explanation_zh": "Memory overview：Zygote 启动时加载通用框架代码和资源，fork 出的 app 进程共享这些 RAM 页。",
+  "sources": [
+   {
+    "url": "https://developer.android.com/topic/performance/memory-overview",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/runtime/zygote",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q045",
+  "kp_id": "T2w2",
+  "type": "mcq",
+  "prompt_zh": "Zygote 在 fork 之前预加载了什么？",
+  "options": [
+   "通用框架代码和资源（如 activity 主题）",
+   "用户数据",
+   "网络缓存"
+  ],
+  "answer": 0,
+  "explanation_zh": "Memory overview 原文：loads common framework code and resources (such as activity themes)。",
+  "sources": [
+   {
+    "url": "https://developer.android.com/topic/performance/memory-overview",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/runtime/zygote",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q046",
+  "kp_id": "T2w2",
+  "type": "mcq",
+  "prompt_zh": "USAP pool 是什么？",
+  "options": [
+   "Zygote 预先生成、尚未特化的 app 进程池（需通过系统属性开启）",
+   "图片缓存池",
+   "线程池"
+  ],
+  "answer": 0,
+  "explanation_zh": "About the Zygote：Zygote 可以立即生成 unspecialized app processes（USAP），这需要通过系统属性或 adb 命令开启；system server 取用一个 USAP 后再改 PID、cgroup 等完成特化。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/runtime/zygote",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q047",
+  "kp_id": "T2w2",
+  "type": "mcq",
+  "prompt_zh": "ART 支持哪两种编译方式？",
+  "options": [
+   "AOT 和 JIT",
+   "只有解释执行",
+   "只有 JIT",
+   "LLVM 和 GCC"
+  ],
+  "answer": 0,
+  "explanation_zh": "ART 文档：引入 AOT 编译；ART JIT 文档：ART 还包含带 profiling 的 JIT 编译器。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/runtime",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/runtime/jit-compiler",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q048",
+  "kp_id": "T2w2",
+  "type": "mcq",
+  "prompt_zh": "除了编译，ART 还负责什么？",
+  "options": [
+   "垃圾回收（GC）",
+   "网络栈",
+   "显示合成"
+  ],
+  "answer": 0,
+  "explanation_zh": "ART 文档有 Improved garbage collection 一节。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/runtime",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q049",
+  "kp_id": "T2w2",
+  "type": "mcq",
+  "prompt_zh": "Baseline Profiles 的作用（官方数据）？",
+  "options": [
+   "从首次启动起代码执行速度提升约 30%",
+   "减小 APK 一半",
+   "取消 GC",
+   "替代 Zygote"
+  ],
+  "answer": 0,
+  "explanation_zh": "Baseline Profiles 概览：improve code execution speed by about 30% from the first launch，因为避免了解释和 JIT。",
+  "sources": [
+   {
+    "url": "https://developer.android.com/topic/performance/baselineprofiles/overview",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/runtime/jit-compiler",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q050",
+  "kp_id": "T2w2",
+  "type": "mcq",
+  "prompt_zh": "Baseline Profiles 为什么从首次启动就见效？",
+  "options": [
+   "随 app 发布的 profile 指导安装时 AOT 编译，不用等运行时 JIT",
+   "因为关闭了 GC",
+   "因为跳过了 Zygote"
+  ],
+  "answer": 0,
+  "explanation_zh": "Baseline Profiles 概览：避免对包含的代码路径做解释和 JIT；ART 文档说明 AOT 编译能提升性能。",
+  "sources": [
+   {
+    "url": "https://developer.android.com/topic/performance/baselineprofiles/overview",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/runtime",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q051",
+  "kp_id": "T2w2",
+  "type": "mcq",
+  "prompt_zh": "AOSP boot 时间优化文档里关于 Zygote 的一条建议？",
+  "options": [
+   "尽早启动 Zygote（start zygote early）",
+   "推迟 Zygote 启动",
+   "关闭 ART"
+  ],
+  "answer": 0,
+  "explanation_zh": "Optimize boot times：Saved 0.25s by starting zygote early。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/perf/boot-times",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/runtime/zygote",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q052",
+  "kp_id": "T2w3",
+  "type": "mcq",
+  "prompt_zh": "什么时候必须用 AIDL？",
+  "options": [
+   "其他应用的客户端要 IPC，且 service 需要处理多线程",
+   "任何跨 activity 通信",
+   "所有 bound service",
+   "只要用 Kotlin"
+  ],
+  "answer": 0,
+  "explanation_zh": "AIDL 页原文：AIDL is necessary only if you let clients from different applications access your service for IPC and you want to handle multithreading。",
+  "sources": [
+   {
+    "url": "https://developer.android.com/develop/background-work/services/aidl",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/develop/background-work/services/bound-services",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q053",
+  "kp_id": "T2w3",
+  "type": "mcq",
+  "prompt_zh": "不需要跨应用并发 IPC 时，官方建议？",
+  "options": [
+   "直接实现 Binder（需 IPC 但不需多线程则用 Messenger）",
+   "一定要写 AIDL",
+   "改用 BroadcastReceiver"
+  ],
+  "answer": 0,
+  "explanation_zh": "AIDL 页：不需要跨应用并发 IPC 就实现 Binder；要 IPC 但不需处理多线程就用 Messenger。",
+  "sources": [
+   {
+    "url": "https://developer.android.com/develop/background-work/services/aidl",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/develop/background-work/services/bound-services",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q054",
+  "kp_id": "T2w3",
+  "type": "mcq",
+  "prompt_zh": "Messenger 适合哪种情况？",
+  "options": [
+   "需要 IPC 但不想处理多线程",
+   "必须多线程并发处理",
+   "只在同一进程内传数据"
+  ],
+  "answer": 0,
+  "explanation_zh": "Bound services 页：Messenger 把所有请求排到单个线程，所以 service 不必设计成线程安全。",
+  "sources": [
+   {
+    "url": "https://developer.android.com/develop/background-work/services/bound-services",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/develop/background-work/services/aidl",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q055",
+  "kp_id": "T2w3",
+  "type": "mcq",
+  "prompt_zh": "AIDL 接口的调用默认在哪个线程执行？",
+  "options": [
+   "不保证在主线程，service 必须线程安全",
+   "总是在主线程",
+   "总是在新建线程"
+  ],
+  "answer": 0,
+  "explanation_zh": "AIDL 页：Incoming calls are not guaranteed to execute on the main thread，要从一开始就考虑多线程。",
+  "sources": [
+   {
+    "url": "https://developer.android.com/develop/background-work/services/aidl",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/develop/background-work/services/bound-services",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q056",
+  "kp_id": "T2w3",
+  "type": "mcq",
+  "prompt_zh": "Android 8 起，framework/app 进程之间的 Binder 设备节点是？",
+  "options": [
+   "/dev/binder",
+   "/dev/vndbinder",
+   "/dev/hwbinder0"
+  ],
+  "answer": 0,
+  "explanation_zh": "Binder IPC 文档：Android 8 起 /dev/binder 专属于 framework 进程；表格列出 /dev/binder 用于 framework/app 进程间的 AIDL IPC。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/architecture/hidl/binder-ipc",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/develop/background-work/services/bound-services",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q057",
+  "kp_id": "T2w3",
+  "type": "mcq",
+  "prompt_zh": "Android 8 引入的 vendor 进程之间（AIDL 接口）的 Binder 域用哪个节点？",
+  "options": [
+   "/dev/vndbinder",
+   "/dev/binder",
+   "/proc/binder"
+  ],
+  "answer": 0,
+  "explanation_zh": "Binder IPC 文档：Android 8 为 vendor 服务新增 /dev/vndbinder（vendor/vendor，AIDL）；/dev/hwbinder 则用于 HIDL。注意 Android 10 的 stable AIDL 允许所有进程使用 /dev/binder。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/architecture/hidl/binder-ipc",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/architecture/aidl/aidl-hals",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q058",
+  "kp_id": "T2w3",
+  "type": "mcq",
+  "prompt_zh": "Android 8 的 Binder scatter-gather 优化做了什么？",
+  "options": [
+   "把一次 binder 调用的数据拷贝从 3 次降到 1 次",
+   "支持 HTTP/2 多路复用",
+   "零拷贝 DMA 到 GPU"
+  ],
+  "answer": 0,
+  "explanation_zh": "Binder IPC 文档：Android 8 uses scatter-gather optimization to reduce the number of copies from 3 to 1。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/architecture/hidl/binder-ipc",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q059",
+  "kp_id": "T2w3",
+  "type": "mcq",
+  "prompt_zh": "Android 10 起 HIDL 的状态，以及新 HAL 用什么定义接口？",
+  "options": [
+   "HIDL 已弃用，改用 (stable) AIDL",
+   "HIDL 是唯一推荐方式",
+   "用 JNI 定义"
+  ],
+  "answer": 0,
+  "explanation_zh": "HIDL 页：As of Android 10, HIDL is deprecated and has been replaced by AIDL；AIDL for HALs 页：Android 11 起可用 AIDL 实现 HAL。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/architecture/hidl",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/architecture/aidl/aidl-hals",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q060",
+  "kp_id": "T2w3",
+  "type": "mcq",
+  "prompt_zh": "system 分区与 vendor 分区的组件之间通信，AIDL 必须满足什么？",
+  "options": [
+   "必须是 stable AIDL",
+   "必须用 Messenger",
+   "不能用 AIDL"
+  ],
+  "answer": 0,
+  "explanation_zh": "AIDL for HALs：framework（system.img）与 hardware（vendor.img）之间的接口 must use stable AIDL。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/architecture/aidl/aidl-hals",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/architecture/hidl/binder-ipc",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q061",
+  "kp_id": "T2w3",
+  "type": "mcq",
+  "prompt_zh": "车载 VHAL 从哪个版本迁移到 AIDL 接口？",
+  "options": [
+   "Android 13",
+   "Android 8",
+   "Android 4.4"
+  ],
+  "answer": 0,
+  "explanation_zh": "VHAL 文档：In Android 13 and higher, VHAL migrated to AIDL at IVehicle.aidl；这正是 HIDL 弃用后 HAL 转向 AIDL 的实例。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/automotive/vhal",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/architecture/hidl",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q062",
+  "kp_id": "T3w1",
+  "type": "mcq",
+  "prompt_zh": "以下哪组 HTTP 方法是 idempotent？",
+  "options": [
+   "PUT、DELETE 以及 safe 方法",
+   "只有 POST",
+   "POST 和 PATCH",
+   "只有 GET"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9110 §9.2.2：PUT, DELETE, and safe request methods are idempotent；MDN 同样这么写。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Idempotent",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q063",
+  "kp_id": "T3w1",
+  "type": "mcq",
+  "prompt_zh": "POST 是 idempotent 吗？",
+  "options": [
+   "不保证是",
+   "是",
+   "只在 HTTPS 下是"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9110 的 idempotent 列表不含 POST；MDN：POST 和 PATCH 不保证 idempotent。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Idempotent",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q064",
+  "kp_id": "T3w1",
+  "type": "mcq",
+  "prompt_zh": "PATCH 是否保证 idempotent？",
+  "options": [
+   "不保证",
+   "保证",
+   "只有 JSON Patch 才保证"
+  ],
+  "answer": 0,
+  "explanation_zh": "MDN Idempotent：The POST and PATCH methods are not guaranteed to be idempotent；RFC 9110 列出的 idempotent 方法也不含 PATCH。",
+  "sources": [
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Idempotent",
+    "verified": true
+   },
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q065",
+  "kp_id": "T3w1",
+  "type": "mcq",
+  "prompt_zh": "GET 是 safe 方法，它是否也是 idempotent？",
+  "options": [
+   "是，safe 方法都是 idempotent",
+   "不是",
+   "取决于服务器"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9110：safe 方法是 GET、HEAD、OPTIONS、TRACE，且 safe 方法都 idempotent；MDN：All safe methods are idempotent。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Idempotent",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q066",
+  "kp_id": "T3w1",
+  "type": "mcq",
+  "prompt_zh": "同一个 DELETE 发两次，按 HTTP 语义预期效果是？",
+  "options": [
+   "对服务器的预期效果和发一次相同",
+   "删除两份资源",
+   "第二次一定报 500"
+  ],
+  "answer": 0,
+  "explanation_zh": "idempotent 定义：多次相同请求对服务器的预期效果与一次相同（响应可以不同）。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Idempotent",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q067",
+  "kp_id": "T3w1",
+  "type": "mcq",
+  "prompt_zh": "连接失败时，客户端能否自动重试 idempotent 请求？",
+  "options": [
+   "可以",
+   "不可以",
+   "只能重试 POST"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9110：idempotent 请求可以在底层连接失败时自动重试；MDN：客户端可以安全重试 idempotent 方法的请求。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Idempotent",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q068",
+  "kp_id": "T3w1",
+  "type": "mcq",
+  "prompt_zh": "POST 支付请求超时、不确定服务器有没有执行，客户端应该？",
+  "options": [
+   "不要盲目自动重试，除非有办法让请求变成 idempotent（如 idempotency key）",
+   "直接无限重试",
+   "改用 GET"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9110：客户端 SHOULD NOT 自动重试非 idempotent 请求，除非能确认语义 idempotent 或确认原请求未被执行；idempotency key 就是让服务端识别重复请求的手段。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Idempotent",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q069",
+  "kp_id": "T3w1",
+  "type": "mcq",
+  "prompt_zh": "大量客户端同时重试时，AWS 建议在 backoff 上加什么？",
+  "options": [
+   "jitter（随机抖动）",
+   "固定 1 秒间隔",
+   "立刻并发重试",
+   "关闭超时"
+  ],
+  "answer": 0,
+  "explanation_zh": "AWS Builders' Library：Jitter adds some amount of randomness to the backoff to spread the retries around in time。",
+  "sources": [
+   {
+    "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+    "verified": true
+   },
+   {
+    "url": "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q070",
+  "kp_id": "T3w1",
+  "type": "mcq",
+  "prompt_zh": "重试时加 jitter 的目的？",
+  "options": [
+   "把重试时间打散，避免同时冲击服务",
+   "加密请求",
+   "减少 payload"
+  ],
+  "answer": 0,
+  "explanation_zh": "AWS：如果所有客户端同时重试，重试本身会造成过载；jitter 用随机量分散到达率。",
+  "sources": [
+   {
+    "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+    "verified": true
+   },
+   {
+    "url": "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q071",
+  "kp_id": "T3w2",
+  "type": "mcq",
+  "prompt_zh": "gRPC 默认用什么序列化 / IDL？",
+  "options": [
+   "Protocol Buffers",
+   "XML",
+   "YAML",
+   "CSV"
+  ],
+  "answer": 0,
+  "explanation_zh": "gRPC core concepts：By default, gRPC uses protocol buffers as the IDL 和消息格式。",
+  "sources": [
+   {
+    "url": "https://grpc.io/docs/what-is-grpc/core-concepts/",
+    "verified": true
+   },
+   {
+    "url": "https://grpc.io/docs/what-is-grpc/introduction/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q072",
+  "kp_id": "T3w2",
+  "type": "mcq",
+  "prompt_zh": "gRPC 是否只能用 Protocol Buffers？",
+  "options": [
+   "不是，默认 protobuf，也可以换其他格式",
+   "是，强制 protobuf",
+   "只能用 JSON"
+  ],
+  "answer": 0,
+  "explanation_zh": "gRPC core concepts：It is possible to use other alternatives if desired；intro 页：gRPC can use protocol buffers。",
+  "sources": [
+   {
+    "url": "https://grpc.io/docs/what-is-grpc/core-concepts/",
+    "verified": true
+   },
+   {
+    "url": "https://grpc.io/docs/what-is-grpc/introduction/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q073",
+  "kp_id": "T3w2",
+  "type": "mcq",
+  "prompt_zh": "gRPC 的调用模型？",
+  "options": [
+   "客户端像调用本地对象一样调用远端服务方法",
+   "只能发 GET 请求",
+   "基于邮件"
+  ],
+  "answer": 0,
+  "explanation_zh": "gRPC intro：client 可以 directly call a method on a server ... as if it were a local object。",
+  "sources": [
+   {
+    "url": "https://grpc.io/docs/what-is-grpc/introduction/",
+    "verified": true
+   },
+   {
+    "url": "https://grpc.io/docs/what-is-grpc/core-concepts/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q074",
+  "kp_id": "T3w2",
+  "type": "mcq",
+  "prompt_zh": "gRPC 的 service 和 rpc 方法用什么描述？",
+  "options": [
+   "Protocol Buffers 的 .proto IDL",
+   "OpenAPI YAML",
+   "GraphQL schema"
+  ],
+  "answer": 0,
+  "explanation_zh": "gRPC core concepts 示例用 .proto 里的 service / rpc 定义。",
+  "sources": [
+   {
+    "url": "https://grpc.io/docs/what-is-grpc/core-concepts/",
+    "verified": true
+   },
+   {
+    "url": "https://protobuf.dev/programming-guides/proto3/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q075",
+  "kp_id": "T3w2",
+  "type": "mcq",
+  "prompt_zh": "Android 上哪些语言支持 gRPC 客户端？",
+  "options": [
+   "Java 和 Kotlin",
+   "只有 C++",
+   "都不支持"
+  ],
+  "answer": 0,
+  "explanation_zh": "gRPC Android 平台页：The following languages support client-side gRPC on Android: Java, Kotlin；intro 页也列出 Android 平台。",
+  "sources": [
+   {
+    "url": "https://grpc.io/docs/platforms/android/",
+    "verified": true
+   },
+   {
+    "url": "https://grpc.io/docs/what-is-grpc/introduction/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q076",
+  "kp_id": "T3w2",
+  "type": "mcq",
+  "prompt_zh": "Protobuf 官方对自己的描述？",
+  "options": [
+   "像 JSON，但更小更快",
+   "比 XML 更易读",
+   "只能用于 Go",
+   "一种数据库"
+  ],
+  "answer": 0,
+  "explanation_zh": "protobuf.dev：It’s like JSON, except it’s smaller and faster, and it generates native language bindings。",
+  "sources": [
+   {
+    "url": "https://protobuf.dev/overview/",
+    "verified": true
+   },
+   {
+    "url": "https://grpc.io/docs/what-is-grpc/introduction/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q077",
+  "kp_id": "T3w2",
+  "type": "mcq",
+  "prompt_zh": "Protobuf 是否和语言绑定？",
+  "options": [
+   "语言中立、平台中立",
+   "只能用于 Java",
+   "只能用于 C++"
+  ],
+  "answer": 0,
+  "explanation_zh": "Protobuf overview：language-neutral, platform-neutral extensible mechanism。",
+  "sources": [
+   {
+    "url": "https://protobuf.dev/overview/",
+    "verified": true
+   },
+   {
+    "url": "https://protobuf.dev/programming-guides/proto3/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q078",
+  "kp_id": "T3w2",
+  "type": "mcq",
+  "prompt_zh": "Protobuf 消息结构定义在哪里？",
+  "options": [
+   ".proto 文件",
+   "XML 布局",
+   "AndroidManifest"
+  ],
+  "answer": 0,
+  "explanation_zh": "Protobuf overview：定义语言写在 .proto 文件里；proto3 guide 给出 message SearchRequest 示例。",
+  "sources": [
+   {
+    "url": "https://protobuf.dev/overview/",
+    "verified": true
+   },
+   {
+    "url": "https://protobuf.dev/programming-guides/proto3/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q079",
+  "kp_id": "T3w2",
+  "type": "mcq",
+  "prompt_zh": "写好 .proto 后如何在代码里使用？",
+  "options": [
+   "用 protobuf 编译器生成各语言的数据访问代码",
+   "手写解析器",
+   "用反射读 JSON"
+  ],
+  "answer": 0,
+  "explanation_zh": "Protobuf overview：proto compiler 生成与数据交互的代码；proto3 guide 讲如何从 .proto 生成 data access classes。",
+  "sources": [
+   {
+    "url": "https://protobuf.dev/overview/",
+    "verified": true
+   },
+   {
+    "url": "https://protobuf.dev/programming-guides/proto3/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q080",
+  "kp_id": "T3w3",
+  "type": "mcq",
+  "prompt_zh": "定义 HTTP caching 的 RFC 是？",
+  "options": [
+   "RFC 9111",
+   "RFC 9110 §9",
+   "RFC 793"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9111 标题即 HTTP Caching；MDN 缓存指南以它为规范来源。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9111",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q081",
+  "kp_id": "T3w3",
+  "type": "mcq",
+  "prompt_zh": "Cache-Control: no-cache 的含义？",
+  "options": [
+   "可以存，但每次使用前必须向服务器验证",
+   "完全不能存",
+   "永久缓存",
+   "只缓存在内存"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9111 §5.2.2.4：no-cache 响应 MUST NOT 未经验证就用于后续请求；MDN Cache-Control 同义。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9111",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q082",
+  "kp_id": "T3w3",
+  "type": "mcq",
+  "prompt_zh": "要求任何缓存都不存储响应，用哪个指令？",
+  "options": [
+   "no-store",
+   "no-cache",
+   "max-age=0",
+   "public"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9111 §5.2.2.5：no-store 表示 cache MUST NOT store any part；MDN Cache-Control 同义。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9111",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q083",
+  "kp_id": "T3w3",
+  "type": "mcq",
+  "prompt_zh": "no-store 对哪些缓存生效？",
+  "options": [
+   "私有缓存和共享缓存都生效",
+   "只对浏览器",
+   "只对 CDN"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9111：This directive applies to both private and shared caches。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9111",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q084",
+  "kp_id": "T3w3",
+  "type": "mcq",
+  "prompt_zh": "max-age=60 的含义？",
+  "options": [
+   "响应在 60 秒内是 fresh，超过即 stale",
+   "60 秒后删除服务器数据",
+   "最多请求 60 次"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9111 §5.2.2.1：age 超过指定秒数即为 stale；web.dev：缓存版本一直使用到不再 fresh，由 max-age 决定。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9111",
+    "verified": true
+   },
+   {
+    "url": "https://web.dev/articles/http-cache",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q085",
+  "kp_id": "T3w3",
+  "type": "mcq",
+  "prompt_zh": "缓存过期后，用 ETag 做条件请求时带哪个头？",
+  "options": [
+   "If-None-Match",
+   "If-Match-All",
+   "Cache-Key"
+  ],
+  "answer": 0,
+  "explanation_zh": "MDN If-None-Match：只有 ETag 不匹配时服务器才返回 200 和资源；web.dev 也说明浏览器用 If-None-Match 做验证。",
+  "sources": [
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/If-None-Match",
+    "verified": true
+   },
+   {
+    "url": "https://web.dev/articles/http-cache",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q086",
+  "kp_id": "T3w3",
+  "type": "mcq",
+  "prompt_zh": "revalidate 时资源未变化，服务器返回？",
+  "options": [
+   "304 Not Modified",
+   "200 并带完整 body",
+   "404"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9110 §15.4.5：304 表示条件 GET/HEAD 的条件为 false，无需再传内容；web.dev：ETag 匹配时返回 304。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   },
+   {
+    "url": "https://web.dev/articles/http-cache",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q087",
+  "kp_id": "T3w3",
+  "type": "mcq",
+  "prompt_zh": "含用户个人数据的响应应该用哪个指令避免被共享缓存存？",
+  "options": [
+   "private",
+   "public",
+   "immutable"
+  ],
+  "answer": 0,
+  "explanation_zh": "MDN 缓存指南：个性化内容如果存在非私有缓存里可能泄露给其他用户，应使用 private。",
+  "sources": [
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q088",
+  "kp_id": "T3w3",
+  "type": "mcq",
+  "prompt_zh": "shared cache 的例子是？",
+  "options": [
+   "代理或 CDN",
+   "app 进程内存",
+   "SharedPreferences"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9111：shared cache 为多个用户复用响应，通常部署在中间层；MDN：例如 Proxy、CDN。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9111",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q089",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "Stripe API 里防止同一笔 POST 收款被重复执行，用什么机制？",
+  "options": [
+   "请求头加 Idempotency-Key，Stripe 保存首次请求的结果并对相同 key 重放",
+   "把请求改成 GET",
+   "在 body 里加时间戳字段",
+   "连发多次取最后一次结果"
+  ],
+  "answer": 0,
+  "explanation_zh": "Stripe 幂等机制：对每个 idempotency key 保存第一次请求的状态码和响应体，之后带相同 key 的请求直接返回同样的结果，不会重复执行。",
+  "sources": [
+   {
+    "url": "https://docs.stripe.com/api/idempotent_requests",
+    "verified": true
+   },
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q090",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "Stripe 的 idempotency key 官方建议怎么生成？多久失效？",
+  "options": [
+   "用足够随机唯一的值（如 V4 UUID），key 至少 24 小时后会被自动清除",
+   "用自增整数，永久有效",
+   "用当前时间戳，1 分钟过期",
+   "用用户邮箱"
+  ],
+  "answer": 0,
+  "explanation_zh": "文档建议用 V4 UUID 这类熵足够的随机字符串（最长 255 字符）；key 存在至少 24 小时后会被系统自动清除，之后重用等于新请求。",
+  "sources": [
+   {
+    "url": "https://docs.stripe.com/api/idempotent_requests",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q091",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "按 Stripe 文档，对哪类请求发送 idempotency key 才有意义？",
+  "options": [
+   "POST；GET 和 DELETE 本身就是幂等的，带 key 没有效果",
+   "所有方法都必须带",
+   "只有 GET",
+   "只有 DELETE"
+  ],
+  "answer": 0,
+  "explanation_zh": "Stripe：POST 请求接受 idempotency key；GET/DELETE 按 HTTP 语义本来就幂等，发送 key 无效果。与 RFC 9110 §9.2.2 的幂等方法定义一致。",
+  "sources": [
+   {
+    "url": "https://docs.stripe.com/api/idempotent_requests",
+    "verified": true
+   },
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q092",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "Stripe list 接口的分页方式是？",
+  "options": [
+   "cursor 式：limit + starting_after / ending_before，响应带 data 数组和 has_more",
+   "page=1&size=20 的页码式",
+   "offset / limit 偏移式",
+   "靠 Link 响应头"
+  ],
+  "answer": 0,
+  "explanation_zh": "Stripe 所有顶层 list API 用基于对象 id 的 cursor 分页：limit（1–100，默认 10）、starting_after、ending_before；响应是 {object:\"list\", data:[...], has_more}。",
+  "sources": [
+   {
+    "url": "https://docs.stripe.com/api/pagination",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q093",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "拉取 Stripe 列表“下一页”的正确做法？",
+  "options": [
+   "把上一页最后一个对象的 id 作为 starting_after 再请求，直到 has_more 为 false",
+   "把 page 参数 +1",
+   "把 limit 翻倍重发",
+   "解析 Link: rel=\"next\" 响应头"
+  ],
+  "answer": 0,
+  "explanation_zh": "cursor 分页：用最后一个对象 id 填 starting_after 取下一页；ending_before 用于取上一页；has_more=false 表示没有更多数据。",
+  "sources": [
+   {
+    "url": "https://docs.stripe.com/api/pagination",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q094",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "请求被 Stripe 限流时返回什么？客户端应如何应对？",
+  "options": [
+   "429 Too Many Requests；用指数退避（最好加抖动）重试",
+   "500，应立即原样重试",
+   "403，应更换 API key",
+   "301，跟随跳转即可"
+  ],
+  "answer": 0,
+  "explanation_zh": "Stripe 限流返回 429 too_many_requests；官方建议在代码里用 exponential backoff 重试，AWS Builders' Library 进一步建议加 jitter 把重试打散。",
+  "sources": [
+   {
+    "url": "https://docs.stripe.com/rate-limits",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/429",
+    "verified": true
+   },
+   {
+    "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q095",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "Stripe 错误对象里，“卡被拒”这类业务失败怎么表示？",
+  "options": [
+   "type=card_error（HTTP 402），配合 code（如 card_declined）和 decline_code",
+   "HTTP 404 Not Found",
+   "type=api_error 表示卡的问题",
+   "只能靠 message 字符串匹配"
+  ],
+  "answer": 0,
+  "explanation_zh": "Stripe 错误有 type（api_error / card_error / idempotency_error / invalid_request_error）；卡被拒属于 card_error，HTTP 状态码 402，应按 code/decline_code 编程处理而不是解析 message。",
+  "sources": [
+   {
+    "url": "https://docs.stripe.com/api/errors",
+    "verified": true
+   },
+   {
+    "url": "https://docs.stripe.com/error-handling",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q096",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "401 和 403 的区别是？Stripe 里 401 通常意味着什么？",
+  "options": [
+   "401 = 未认证/凭证无效（Stripe：API key 不对），403 = 已认证但无权限",
+   "401 = 无权限，403 = 未登录",
+   "两者完全等价",
+   "401 只用于 token 过期"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9110/MDN：401 Unauthorized 表示缺少或无效的认证凭证，403 Forbidden 表示服务器理解请求但拒绝授权；Stripe 文档：401 = No valid API key provided。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/401",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/403",
+    "verified": true
+   },
+   {
+    "url": "https://docs.stripe.com/api/errors",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q097",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "验证 Stripe webhook 事件真伪的正确做法是？",
+  "options": [
+   "用 endpoint 的签名密钥校验 Stripe-Signature 头（HMAC-SHA256），并检查时间戳防重放",
+   "检查 User-Agent 是否为 Stripe",
+   "只要走 HTTPS 就可信",
+   "比较 body 里的 livemode 字段"
+  ],
+  "answer": 0,
+  "explanation_zh": "Stripe 给每个事件加 Stripe-Signature 头，用 endpoint 的 signing secret 做 HMAC-SHA256 验签；签名里含时间戳，官方库默认容忍 5 分钟以内，防止重放攻击。",
+  "sources": [
+   {
+    "url": "https://docs.stripe.com/webhooks",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q098",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "webhook handler 收到事件后应该怎么响应？",
+  "options": [
+   "尽快返回 2xx，把耗时业务放到队列/后台；非 2xx 或超时 Stripe 会按计划重试",
+   "同步做完所有业务逻辑再返回",
+   "返回 301 让 Stripe 换地址",
+   "故意返回 500 让 Stripe 重发以防丢失"
+  ],
+  "answer": 0,
+  "explanation_zh": "Stripe 要求 handler 在复杂逻辑之前先快速返回成功状态码，否则视为失败并重试投递；重试意味着 handler 还要对重复事件做幂等处理。",
+  "sources": [
+   {
+    "url": "https://docs.stripe.com/webhooks",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q099",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "服务器想告诉客户端“等多久再重试”（如 429/503），用哪个响应头？",
+  "options": [
+   "Retry-After",
+   "X-Wait",
+   "Expires",
+   "Age"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9110 §10.2.3 定义 Retry-After，可用于 503 和 429 等场景，值是秒数或 HTTP 日期；MDN 的 429 页面也建议配合 Retry-After。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Retry-After",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/429",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q100",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "用 OkHttp/Retrofit 写带退避的自动重试，哪类请求可以直接重试？",
+  "options": [
+   "幂等请求（GET/PUT/DELETE 和 safe 方法）；POST 要先配 idempotency key 才能安全重试",
+   "所有请求都能盲目重试",
+   "只有 POST 可以重试",
+   "返回 2xx 的请求"
+  ],
+  "answer": 0,
+  "explanation_zh": "RFC 9110：幂等请求可在连接失败时自动重试，非幂等（POST）不行，除非能让语义变幂等——Stripe 的做法就是 Idempotency-Key；重试要配 backoff + jitter。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Idempotent",
+    "verified": true
+   },
+   {
+    "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+    "verified": true
+   },
+   {
+    "url": "https://docs.stripe.com/api/idempotent_requests",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "id": "q101",
+  "kp_id": "T3sx",
+  "type": "mcq",
+  "confidence": "community",
+  "prompt_zh": "调用 Stripe API 时怎么认证？",
+  "options": [
+   "Authorization: Bearer <secret key>（或 HTTP basic auth，key 作用户名）",
+   "把 secret key 放在 URL query 里",
+   "用 Cookie",
+   "不需要认证"
+  ],
+  "answer": 0,
+  "explanation_zh": "Stripe 用 API key 认证：HTTP bearer（Authorization: Bearer sk_...）或 basic auth（key 作用户名、密码留空）；secret key 只能放在服务端/受控环境，不要泄漏到客户端或仓库。",
+  "sources": [
+   {
+    "url": "https://docs.stripe.com/api/authentication",
+    "verified": true
+   }
+  ]
+ }
+]

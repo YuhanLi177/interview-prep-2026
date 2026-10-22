@@ -1,0 +1,73 @@
+{
+ "note_zh": "面经称 Stripe 等公司的 onsite 包含「JSON → REST → 解析 → 链式调用」的实操题（传闻）；下面的任务在本地 Kotlin 项目或 Android Studio 里都能做，技术参考全部是官方文档。写完代码贴进编辑器，用「提交批改」发给导师批改。",
+ "confidence": "community",
+ "items": [
+  {
+   "id": "ho1",
+   "title_zh": "用 OkHttp/Retrofit 调一个公开 HTTP API 并解析 JSON",
+   "kind": "code",
+   "confidence": "community",
+   "prompt_zh": "用 Kotlin + OkHttp（或 Retrofit + converter）调用公开 API（例如 GET https://api.github.com/repos/square/okhttp），解析 JSON 出 name、stargazers_count、description 并打印。要求：请求放在后台线程/协程；处理非 2xx（读 code() 和 body）；超时设置 connect/read 各 10s。",
+   "sources": [
+    {
+     "url": "https://square.github.io/okhttp/",
+     "verified": true
+    },
+    {
+     "url": "https://square.github.io/retrofit/",
+     "verified": true
+    },
+    {
+     "url": "https://docs.github.com/en/rest/repos/repos",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "id": "ho2",
+   "title_zh": "带退避 + 抖动的重试，以及 POST 的 idempotency key",
+   "kind": "code",
+   "confidence": "community",
+   "prompt_zh": "在 ho1 的基础上实现 retry 包装器：对幂等请求（GET）在 IOException / 429 / 5xx 时最多重试 3 次，间隔 = base × 2^attempt + 随机 jitter，并尊重 Retry-After 头；再写一个 POST 示例：生成 V4 UUID 作为 Idempotency-Key 头，模拟“响应超时后用同一个 key 重发”。说明为什么 POST 不带 key 时不能盲目重试。",
+   "sources": [
+    {
+     "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+     "verified": true
+    },
+    {
+     "url": "https://docs.stripe.com/api/idempotent_requests",
+     "verified": true
+    },
+    {
+     "url": "https://www.rfc-editor.org/rfc/rfc9110",
+     "verified": true
+    },
+    {
+     "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Retry-After",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "id": "ho3",
+   "title_zh": "解析分页结果直到取完（cursor 与 page 两种风格）",
+   "kind": "code",
+   "confidence": "community",
+   "prompt_zh": "写一个函数把分页 API 拉完并合并成一个 List：① GitHub 风格：GET https://api.github.com/repos/square/okhttp/contributors?per_page=30&page=N，循环到返回空数组（或解析 Link 头）；② 再按 Stripe 风格写伪代码/实现：limit + starting_after=上一页最后一个 id，循环直到 has_more=false。比较两种分页在“翻页时数据被插入/删除”情况下的表现。",
+   "sources": [
+    {
+     "url": "https://docs.github.com/en/rest/using-the-rest-api/using-pagination-in-the-rest-api",
+     "verified": true
+    },
+    {
+     "url": "https://docs.stripe.com/api/pagination",
+     "verified": true
+    },
+    {
+     "url": "https://square.github.io/okhttp/",
+     "verified": true
+    }
+   ]
+  }
+ ]
+}

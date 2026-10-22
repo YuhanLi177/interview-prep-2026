@@ -1,0 +1,260 @@
+[
+ {
+  "track": "T1",
+  "track_name": "Coding",
+  "week": 1,
+  "id": "T1w1",
+  "title_zh": "Arrays & Hashing",
+  "summary_zh": "用 HashMap/HashSet 把查找降到平均 O(1)：Two Sum、Contains Duplicate、Anagram、Top K。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/hash-table/",
+    "verified": true
+   },
+   {
+    "url": "https://kotlinlang.org/docs/collections-overview.html",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "track": "T2",
+  "track_name": "Android / Platform",
+  "week": 1,
+  "id": "T2w1",
+  "title_zh": "平台架构",
+  "summary_zh": "app → framework → system services → ART → HAL → kernel；车机通过 VHAL 的 property 接入车辆信号。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/architecture",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/guide/platform",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/architecture/hal",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/automotive/vhal",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "track": "T3",
+  "track_name": "Backend",
+  "week": 1,
+  "id": "T3w1",
+  "title_zh": "HTTP 语义与 idempotency",
+  "summary_zh": "PUT/DELETE/safe 方法 idempotent，POST/PATCH 不保证；重试要 backoff + jitter，POST 靠 idempotency key。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Idempotent",
+    "verified": true
+   },
+   {
+    "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "track": "T1",
+  "track_name": "Coding",
+  "week": 2,
+  "id": "T1w2",
+  "title_zh": "Two Pointers / Sliding Window",
+  "summary_zh": "双指针相向或同向移动，窗口右扩、冲突时左缩，通常 O(n)。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/array/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "track": "T2",
+  "track_name": "Android / Platform",
+  "week": 2,
+  "id": "T2w2",
+  "title_zh": "Zygote 与 ART",
+  "summary_zh": "system_server 通过 Unix socket 请求 Zygote fork；预加载框架代码共享内存页；ART 的 AOT/JIT、GC 和 Baseline Profiles。",
+  "sources": [
+   {
+    "url": "https://source.android.com/docs/core/runtime/zygote",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/topic/performance/memory-overview",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/runtime",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/runtime/jit-compiler",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/topic/performance/baselineprofiles/overview",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "track": "T3",
+  "track_name": "Backend",
+  "week": 2,
+  "id": "T3w2",
+  "title_zh": "REST vs gRPC / Protobuf",
+  "summary_zh": "gRPC 默认以 protobuf 作 IDL 和消息格式，像本地调用一样调远端方法；protobuf 语言中立、更小更快。",
+  "sources": [
+   {
+    "url": "https://grpc.io/docs/what-is-grpc/introduction/",
+    "verified": true
+   },
+   {
+    "url": "https://grpc.io/docs/what-is-grpc/core-concepts/",
+    "verified": true
+   },
+   {
+    "url": "https://protobuf.dev/overview/",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "track": "T1",
+  "track_name": "Coding",
+  "week": 3,
+  "id": "T1w3",
+  "title_zh": "Stack / Binary Search",
+  "summary_zh": "括号匹配用栈（LIFO）；二分每次排除一半，旋转数组先判断哪一半有序。",
+  "sources": [
+   {
+    "url": "https://github.com/neetcode-gh/leetcode",
+    "verified": true
+   },
+   {
+    "url": "https://www.techinterviewhandbook.org/algorithms/stack/",
+    "verified": true
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Binary_search",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "track": "T2",
+  "track_name": "Android / Platform",
+  "week": 3,
+  "id": "T2w3",
+  "title_zh": "Binder / AIDL",
+  "summary_zh": "跨应用并发 IPC 才必须用 AIDL，否则 Binder 或 Messenger；binder/hwbinder/vndbinder 三个域；HIDL 弃用，HAL 改用 stable AIDL。",
+  "sources": [
+   {
+    "url": "https://developer.android.com/develop/background-work/services/aidl",
+    "verified": true
+   },
+   {
+    "url": "https://developer.android.com/develop/background-work/services/bound-services",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/architecture/hidl/binder-ipc",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/architecture/hidl",
+    "verified": true
+   },
+   {
+    "url": "https://source.android.com/docs/core/architecture/aidl/aidl-hals",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "track": "T3",
+  "track_name": "Backend",
+  "week": 3,
+  "id": "T3w3",
+  "title_zh": "HTTP caching",
+  "summary_zh": "no-cache vs no-store、max-age 新鲜度、ETag + If-None-Match → 304、private vs shared cache。",
+  "sources": [
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9111",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching",
+    "verified": true
+   },
+   {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+    "verified": true
+   },
+   {
+    "url": "https://web.dev/articles/http-cache",
+    "verified": true
+   }
+  ]
+ },
+ {
+  "track": "T3",
+  "track_name": "Backend",
+  "week": 1,
+  "id": "T3sx",
+  "title_zh": "Stripe 式 HTTP/API 集成",
+  "confidence": "community",
+  "rumor_note_zh": "Reddit/Blind/PracHub 等面经称 Stripe 面试包含 HTTP 请求 / API 集成任务（JSON → REST → 解析 → 链式调用）；“会考这个”是传闻，下面的技术内容本身全部来自官方文档。",
+  "summary_zh": "Idempotency-Key 防重复扣款；cursor 分页（limit + starting_after + has_more）；429 限流用指数退避 + 抖动；webhook 用 Stripe-Signature 验签并检查时间戳防重放。",
+  "sources": [
+   {
+    "url": "https://docs.stripe.com/api/idempotent_requests",
+    "verified": true
+   },
+   {
+    "url": "https://docs.stripe.com/api/pagination",
+    "verified": true
+   },
+   {
+    "url": "https://docs.stripe.com/api/errors",
+    "verified": true
+   },
+   {
+    "url": "https://docs.stripe.com/rate-limits",
+    "verified": true
+   },
+   {
+    "url": "https://docs.stripe.com/webhooks",
+    "verified": true
+   },
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110",
+    "verified": true
+   },
+   {
+    "url": "https://www.rfc-editor.org/rfc/rfc9111",
+    "verified": true
+   }
+  ]
+ }
+]

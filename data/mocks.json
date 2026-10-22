@@ -1,0 +1,193 @@
+{
+ "companies": {
+  "stripe": {
+   "note": "不考 LeetCode：多段递进题、Integration、Bug Squash、Mobile/System Design、HM。onsite 用 Kotlin，可查文档。官方练习仓库：github.com/stripe-interview/android-kotlin-interview-prep（Android Studio + API 28 模拟器）。",
+   "items": [
+    {
+     "title": "Screen：字符串解析 + 格式化输出（多段）",
+     "mins": 45,
+     "kind": "coding",
+     "prompt": "解析一段多行文本记录并按要求格式化输出；第 1 段过了才出第 2 段。重点是代码质量和测试，大多数人完成 4 段里的 2–3 段。"
+    },
+    {
+     "title": "Integration：JSON → REST → 解析 → 链式调用",
+     "mins": 60,
+     "kind": "coding",
+     "prompt": "在 Android Studio 里打开一个现成 app，读取 JSON 文件，调用 REST API（例如下载图片），解析结果，再串起下一次调用，让 UI 正常显示。"
+    },
+    {
+     "title": "Bug Squash：陌生仓库修 bug",
+     "mins": 60,
+     "kind": "coding",
+     "prompt": "在一个开源项目里有失败的单元测试，用 IDE debugger 找到并修复 bug（面经例子：Jackson JSON 的已知 bug）。考察你如何使用调试工具。"
+    },
+    {
+     "title": "Mobile Design（未验证的练习题）",
+     "mins": 45,
+     "kind": "design",
+     "prompt": "设计一个 Terminal reader SDK：发现 / 连接读卡器、收款、离线 store-and-forward。设备是基于 AOSP 的 SmartPOS，没有 GMS，生产机禁用 adb，Stripe 统一 OTA。"
+    },
+    {
+     "title": "HM：一个复杂项目深挖",
+     "mins": 45,
+     "kind": "behavioral",
+     "prompt": "挑一个你主导的复杂项目（例如 Climate / Seat app 跨车型 RRO 或 Compose 重写），讲清背景、决策、取舍和结果；可能有 AI 相关的行为题。"
+    }
+   ]
+  },
+  "capone": {
+   "note": "CodeSignal OA（4 题 / 90 分钟）→ Power Day 约 4 × 1 h：coding、system design、case、behavioral。",
+   "items": [
+    {
+     "title": "OA 风格：分块处理 CSV",
+     "mins": 45,
+     "kind": "coding",
+     "prompt": "实现按行分块处理 CSV 的程序，多步 OOP / 解析题逐步加需求，O(N) 字符串处理。"
+    },
+    {
+     "title": "System Design：TinyURL 或支付 / Zelle 转账",
+     "mins": 45,
+     "kind": "design",
+     "prompt": "设计一个银行转账（Zelle 类）或 TinyURL 系统，覆盖 UI + API + DB、可扩展性、AWS。"
+    },
+    {
+     "title": "Android domain：Flow / coroutines / DI",
+     "mins": 30,
+     "kind": "domain",
+     "prompt": "解释 DI qualifiers、MVVM vs MVI、Flow upstream/downstream，以及 coroutines 与 ViewModel 的“陷阱题”。"
+    },
+    {
+     "title": "Behavioral：冲突与 job fit",
+     "mins": 30,
+     "kind": "behavioral",
+     "prompt": "讲一次与同事或 EM 的冲突如何建设性解决；再讲一个过往项目。"
+    }
+   ]
+  },
+  "life360": {
+   "note": "Recruiter → HM 行为面（STAR）→ 技术 coding → virtual onsite 约 4 轮：DSA、system design、Android Studio pair programming、engineering fit。面经都在 2023-11 至 2024-02。",
+   "items": [
+    {
+     "title": "DSA：Two Sum 变体",
+     "mins": 45,
+     "kind": "coding",
+     "prompt": "做一道 Two Sum 变体，讲清复杂度和测试用例。"
+    },
+    {
+     "title": "实现接口：circles 增删查",
+     "mins": 45,
+     "kind": "coding",
+     "prompt": "实现 add/delete/query circles（circleId、成员数）的接口，并分析每个操作的复杂度。"
+    },
+    {
+     "title": "Pair programming：不用 Retrofit 调 API",
+     "mins": 60,
+     "kind": "coding",
+     "prompt": "在 Android Studio 里用 JSONObject / JSONArray 解析 API 返回并显示到 UI。"
+    },
+    {
+     "title": "Mobile System Design：Design Uber",
+     "mins": 45,
+     "kind": "design",
+     "prompt": "设计一个 Uber 类 app 的客户端：定位、实时更新、离线与电量约束。"
+    },
+    {
+     "title": "Behavioral（LEST 框架）",
+     "mins": 30,
+     "kind": "behavioral",
+     "prompt": "时间紧的关键项目中如何说服 stakeholder；最自豪的项目；一次技术挑战。"
+    }
+   ]
+  }
+ },
+ "rubric": {
+  "coding": [
+   [
+    "Problem solving",
+    "澄清、系统化、最优解、正确 Big-O，无大提示；还能给多解和 trade-off"
+   ],
+   [
+    "Coding",
+    "无 bug、地道 Kotlin、抽象清晰"
+   ],
+   [
+    "Testing",
+    "像 debugger 一样走用例，抓边界，自己修 bug"
+   ],
+   [
+    "Communication",
+    "全程清晰有条理，面试官不用追问"
+   ]
+  ],
+  "design": [
+   [
+    "Scope & constraints",
+    "说清 in / out of scope，以及电量、网络、process death 对设计的影响"
+   ],
+   [
+    "Data & contracts",
+    "说明哪份数据是 source of truth；idempotency key；顺序与重复"
+   ],
+   [
+    "Client structure",
+    "谁拥有这项工作、它的生命周期超出页面多久"
+   ],
+   [
+    "The hard part",
+    "第一个想法 → 为什么失败 → 修复成本"
+   ],
+   [
+    "Failure / ship",
+    "失败时用户看到什么、kill switch、监控、旧版本"
+   ],
+   [
+    "Communication",
+    "守时，假设说出口，被打断能回到主线"
+   ]
+  ],
+  "domain": [
+   [
+    "Correctness",
+    "机制正确，主动说出限制"
+   ],
+   [
+    "Ownership/lifetime",
+    "说出谁拥有状态 / 工作、何时结束"
+   ],
+   [
+    "Failure handling",
+    "覆盖引入的故障"
+   ],
+   [
+    "Communication",
+    "第一句就清楚，能纠正自己的过度断言"
+   ]
+  ],
+  "behavioral": [
+   [
+    "Scope/impact",
+    "达到目标级别（senior = 跨团队影响、拥有模糊问题）"
+   ],
+   [
+    "Ownership",
+    "说“我”，不只是“我们”"
+   ],
+   [
+    "Specifics",
+    "有具体细节和数字"
+   ],
+   [
+    "Conflict",
+    "建设性处理分歧"
+   ],
+   [
+    "Self-awareness",
+    "STAR + Learning"
+   ]
+  ]
+ },
+ "verification_note_zh": "面试流程和题型来自面经（Reddit / Blind / PracHub 等），不是官方资料；Mobile Design 题标注为未验证练习题。",
+ "official_links": [
+  "https://github.com/stripe-interview/android-kotlin-interview-prep"
+ ]
+}

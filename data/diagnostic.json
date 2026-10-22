@@ -1,0 +1,279 @@
+{
+ "count": 15,
+ "minutes": 45,
+ "routing": [
+  {
+   "max_score": 6,
+   "route_zh": "12 周慢速版：Trees、Graphs、Zygote/Binder、Performance 各多给一周，每周 5–6 h"
+  },
+  {
+   "max_score": 11,
+   "route_zh": "10 周默认版：只做必做题，每周 6–7 h"
+  },
+  {
+   "max_score": 15,
+   "route_zh": "10 周 + stretch：补 Blind 75 剩下的题，或第 8 周开始 mock，每周 7–8 h"
+  }
+ ],
+ "questions": [
+  {
+   "n": 1,
+   "track": "Coding",
+   "prompt_zh": "Two Sum：写出 O(n) 解法。",
+   "answer_zh": "用 `HashMap` 存 value→index，扫一遍时查 `target - x`；时间 O(n)，空间 O(n)。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://github.com/neetcode-gh/leetcode",
+     "verified": true
+    },
+    {
+     "url": "https://kotlinlang.org/docs/collections-overview.html",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "track": "Coding",
+   "prompt_zh": "Valid Parentheses：用哪种数据结构？",
+   "answer_zh": "Stack（`ArrayDeque<Char>`）；最后栈必须为空。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://github.com/neetcode-gh/leetcode",
+     "verified": true
+    },
+    {
+     "url": "https://kotlinlang.org/docs/collections-overview.html",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "track": "Coding",
+   "prompt_zh": "Longest Substring Without Repeating Characters：属于哪个 pattern？复杂度是多少？",
+   "answer_zh": "Sliding Window + Set/Map；O(n)。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://github.com/neetcode-gh/leetcode",
+     "verified": true
+    },
+    {
+     "url": "https://www.techinterviewhandbook.org/coding-interview-study-plan/",
+     "verified": false
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "track": "Coding",
+   "prompt_zh": "二叉树 level-order traversal：用 BFS 还是 DFS？为什么？",
+   "answer_zh": "BFS 天然按层推进，用 queue；DFS 也可以，要带 depth。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://github.com/neetcode-gh/leetcode",
+     "verified": true
+    },
+    {
+     "url": "https://www.techinterviewhandbook.org/coding-interview-study-plan/",
+     "verified": false
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "track": "Coding",
+   "prompt_zh": "Number of Islands：给出两种解法和最坏空间复杂度。",
+   "answer_zh": "DFS/BFS flood fill，或 Union-Find；最坏空间 O(m·n)。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://github.com/neetcode-gh/leetcode",
+     "verified": true
+    },
+    {
+     "url": "https://www.techinterviewhandbook.org/coding-interview-study-plan/",
+     "verified": false
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "track": "Android / Platform",
+   "prompt_zh": "`StateFlow` 和 `SharedFlow` 有什么区别？UI state 用哪个？",
+   "answer_zh": "StateFlow 总有一个当前值，适合放 UI state；SharedFlow 可以设置 replay，适合事件。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://developer.android.com/kotlin/flow/stateflow-and-sharedflow",
+     "verified": true
+    },
+    {
+     "url": "https://developer.android.com/kotlin/flow",
+     "verified": false
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "track": "Android / Platform",
+   "prompt_zh": "网络恢复后要可靠上传离线记录，即使进程被杀也要上传，用什么组件和 constraint？",
+   "answer_zh": "WorkManager + `NetworkType.CONNECTED`；任务持久化，重启后仍会执行，失败用 `Result.retry()` 按 backoff 重试。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://developer.android.com/develop/background-work/background-tasks/persistent",
+     "verified": true
+    },
+    {
+     "url": "https://developer.android.com/topic/architecture/data-layer/offline-first",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "track": "Android / Platform",
+   "prompt_zh": "新的 app 进程是怎么创建的？Zygote 和 system_server 各自做什么？",
+   "answer_zh": "system_server 通过 Unix socket 请求 Zygote；Zygote 已预加载框架代码和资源，fork 出新进程，所以进程之间可以共享内存页。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://source.android.com/docs/core/runtime/zygote",
+     "verified": true
+    },
+    {
+     "url": "https://developer.android.com/topic/performance/memory-overview",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "track": "Android / Platform",
+   "prompt_zh": "跨进程调用 service 时，什么时候必须用 AIDL，什么时候直接实现 Binder 就够了？",
+   "answer_zh": "只有“其他应用的客户端要做 IPC，并且你需要在 service 里处理并发”时才必须用 AIDL；否则直接实现 Binder（或用 Messenger）。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://developer.android.com/develop/background-work/services/aidl",
+     "verified": true
+    },
+    {
+     "url": "https://developer.android.com/develop/background-work/services/bound-services",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "track": "Android / Platform",
+   "prompt_zh": "Configuration change 和 process death 时，`ViewModel` 分别会怎样？",
+   "answer_zh": "configuration change 时 ViewModel 会保留；process death 时会丢失，需要 SavedStateHandle 或持久化存储。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://developer.android.com/topic/libraries/architecture/viewmodel",
+     "verified": true
+    },
+    {
+     "url": "https://developer.android.com/guide/components/activities/activity-lifecycle",
+     "verified": false
+    },
+    {
+     "url": "https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-savedstate",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "track": "Android / Platform",
+   "prompt_zh": "什么是 cold / warm / hot start？为什么建议按 cold start 来优化？",
+   "answer_zh": "cold start 从零创建进程，warm/hot start 是把已有进程或 activity 拉回前台；按 cold start 优化，warm/hot 也会跟着变快。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://developer.android.com/topic/performance/vitals/launch-time",
+     "verified": true
+    },
+    {
+     "url": "https://developer.android.com/topic/performance/baselineprofiles/overview",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "track": "System Design",
+   "prompt_zh": "offline-first app 中 UI 应该从哪个 data source 读数据？",
+   "answer_zh": "只从 local data source 读（single source of truth）。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://developer.android.com/topic/architecture/data-layer/offline-first",
+     "verified": true
+    },
+    {
+     "url": "https://developer.android.com/topic/architecture/data-layer",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "track": "System Design",
+   "prompt_zh": "说出两种 conflict resolution 策略，以及 LWW 的风险。",
+   "answer_zh": "LWW、版本号 / 向量时钟、server merge、CRDT；LWW 会静默丢失并发写入。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://developer.android.com/topic/architecture/data-layer/offline-first",
+     "verified": true
+    },
+    {
+     "url": "https://dataintensive.net/",
+     "verified": false
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "track": "Backend",
+   "prompt_zh": "哪些 HTTP 方法是 idempotent？这对 retry 有什么影响？",
+   "answer_zh": "PUT、DELETE 和 safe 方法（GET/HEAD/OPTIONS/TRACE）是 idempotent，POST 不是；idempotent 请求可以自动重试，POST 需要 idempotency key。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://www.rfc-editor.org/rfc/rfc9110",
+     "verified": true
+    },
+    {
+     "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "track": "Backend",
+   "prompt_zh": "`no-cache` 和 `no-store` 有什么区别？",
+   "answer_zh": "`no-cache`：可以存，但使用前必须 revalidate；`no-store`：完全不存。",
+   "scoring": "0 / 0.5 / 1 自评",
+   "sources": [
+    {
+     "url": "https://www.rfc-editor.org/rfc/rfc9111",
+     "verified": true
+    },
+    {
+     "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching",
+     "verified": true
+    }
+   ]
+  }
+ ]
+}

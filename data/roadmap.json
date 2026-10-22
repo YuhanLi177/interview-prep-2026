@@ -1,0 +1,84 @@
+{
+ "weeks": 10,
+ "tracks": [
+  {
+   "id": "T1",
+   "name": "Coding（Kotlin）"
+  },
+  {
+   "id": "T2",
+   "name": "Android Platform / Mobile Design"
+  },
+  {
+   "id": "T3",
+   "name": "Backend-for-mobile"
+  }
+ ],
+ "plan": [
+  {
+   "week": 1,
+   "T1": "Arrays & Hashing",
+   "T2": "平台架构",
+   "T3": "HTTP 语义与 idempotency（RFC 9110 §9.2.2；retries/jitter）"
+  },
+  {
+   "week": 2,
+   "T1": "Two Pointers, Sliding Window",
+   "T2": "Zygote 与 ART",
+   "T3": "REST vs gRPC / Protobuf"
+  },
+  {
+   "week": 3,
+   "T1": "Stack, Binary Search",
+   "T2": "IPC：Binder / AIDL",
+   "T3": "HTTP caching"
+  },
+  {
+   "week": 4,
+   "T1": "Linked List",
+   "T2": "Lifecycle",
+   "T3": "数据模型和存储（Primer “Database”；DDIA 第 2–3 章）"
+  },
+  {
+   "week": 5,
+   "T1": "Trees",
+   "T2": "Performance",
+   "T3": "Replication 与 eventual consistency（Primer “Consistency patterns”；DDIA 第 5 章）"
+  },
+  {
+   "week": 6,
+   "T1": "Tries, Heap",
+   "T2": "Offline-first + sync",
+   "T3": "Queues 与异步，retries（Primer “Asynchronism”）"
+  },
+  {
+   "week": 7,
+   "T1": "Graphs",
+   "T2": "通用设计 1",
+   "T3": "Distributed patterns（idempotent receiver、WAL、quorum）"
+  },
+  {
+   "week": 8,
+   "T1": "1-D DP",
+   "T2": "通用设计 2：push 与无 GMS 设备",
+   "T3": "后端设计题：TinyURL / 支付（对应 Capital One）"
+  },
+  {
+   "week": 9,
+   "T1": "Intervals, Greedy",
+   "T2": "综合题（每题 45 分钟）",
+   "T3": "复习，并把 backend 内容并入 T2 的 mock"
+  },
+  {
+   "week": 10,
+   "T1": "复习 + 2 次 mock",
+   "T2": "2 次 mock",
+   "T3": "复习，并把 backend 内容并入 T2 的 mock"
+  }
+ ],
+ "quiz_coverage_weeks": [
+  1,
+  2,
+  3
+ ]
+}
