@@ -1,0 +1,10 @@
+{
+  "name": "interview-prep-2026",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Android 面试 10 周备考静态站（GitHub Pages + gist 同步）",
+  "scripts": {
+    "test": "node --test"
+  }
+}
